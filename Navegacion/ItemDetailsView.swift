@@ -9,7 +9,21 @@ import SwiftUI
 
 struct ItemDetailsView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+   // @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    var name: String
+    var price: Float
+    //variable computada
+    var priceText:  String  {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        if let formatted = formatter.string(from: NSNumber(value: price)) {
+            return formatted
+        }else{
+            return String(price)
+        }
+    }
+    
     
     var body: some View {
         
@@ -23,14 +37,14 @@ struct ItemDetailsView: View {
                     .frame(height: 200)
                     .cornerRadius(15)
                 
-                Text("Apple Macbook Air De 13,6'' Chip M2 512 Gb Ssd Gris Espacial - Distribuidor autorizado")
+                Text("\(name) De 13,6'' Chip M2 512 Gb Ssd Gris Espacial - Distribuidor autorizado")
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.bold)
                     .padding()
                 
                     .multilineTextAlignment(.center)
                 HStack{
-                    Text("$31,899").font(.title)
+                    Text(priceText).font(.title)
                     
                     Text("16% OFF").font(.callout)
                         .fontWeight(.semibold)
@@ -64,21 +78,29 @@ Con su espectacular pantalla Retina, cámara FaceTime HD y micrófonos con calid
         .navigationTitle("Detalles")
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
+        .toolbar {
+                   ToolbarItem(placement: .navigationBarLeading) {
+                       Button { dismiss() } label: {
+                           Image(systemName:"arrow.backward.circle.fill")
+                               .foregroundColor(.yellow)
+                       }
+                   }
+               }
+        /*.navigationBarItems(leading:
                                 Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Image(systemName: "arrow.backward.circle.fill").foregroundColor(.yellow)
         })
                             
-        )
+        )*/
     }
 }
 
 struct ItemDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            ItemDetailsView()
+        NavigationStack{
+            ItemDetailsView(name: "Mac", price: 100)
         }
     }
 }

@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView{
+        NavigationStack{
             
-            NavigationLink(destination: ItemDetailsView(), label: {
+            NavigationLink(destination: ItemDetailsView(name: "MacBook Air", price: 15689), label: {
+               ItemRowView()
+            })
+            
+            NavigationLink(destination: ItemDetailsView(name: "MacBook Pro Usado", price: 3689), label: {
                ItemRowView()
             })
                            
