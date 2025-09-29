@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,10 @@
 		9067A3422AC223D7006CA2B5 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		9067A3442AC223E3006CA2B5 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		904579952E89FCC300304950 /* Pro */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Pro; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9067A32C2AC22027006CA2B5 /* Frameworks */ = {
@@ -57,6 +61,7 @@
 		9067A3312AC22027006CA2B5 /* Navegacion */ = {
 			isa = PBXGroup;
 			children = (
+				904579952E89FCC300304950 /* Pro */,
 				9067A3322AC22027006CA2B5 /* NavegacionApp.swift */,
 				9067A3342AC22027006CA2B5 /* ContentView.swift */,
 				9067A3362AC2202B006CA2B5 /* Assets.xcassets */,
@@ -90,6 +95,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				904579952E89FCC300304950 /* Pro */,
 			);
 			name = Navegacion;
 			productName = Navegacion;

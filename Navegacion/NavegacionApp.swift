@@ -12,7 +12,8 @@ struct NavegacionApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            NavAvanzado()
+            //NavAvanzado()
+            NavManagerView()
         }
     }
 }
